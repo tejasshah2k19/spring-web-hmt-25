@@ -1,0 +1,8 @@
+create 1 CalcController that will open InputNum.jsp 
+		this jsp having 1 form with 
+				two text box that will read number 
+				and 
+				one submit button 
+		
+----------------------------------------------------------------
+
