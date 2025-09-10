@@ -6,3 +6,8 @@ create 1 CalcController that will open InputNum.jsp
 		
 ----------------------------------------------------------------
 
+validation ->
+				1) lib -> jar -> dep ->	
+						
+				2) ProductBean=>	@NotBlank
+				

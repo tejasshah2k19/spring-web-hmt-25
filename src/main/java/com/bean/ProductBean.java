@@ -1,10 +1,16 @@
 package com.bean;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class ProductBean {
 
+
+	@NotBlank
 	private String productName;
 	private Integer price;
 	private Integer qty;
+	
+	@NotBlank
 	private String category;
 
 	public String getProductName() {
