@@ -1,6 +1,7 @@
 package com.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +27,13 @@ public class ProductController {
 //	}
 
 	@PostMapping("saveproduct")
-	public String saveProduct(@Validated ProductBean product, BindingResult result) {
+	public String saveProduct(@Validated ProductBean product, BindingResult result,Model model) {
 		// form -> input -> read?
 		//
 		// validation
 		if (result.hasErrors()) {
+			//result.getFieldError("productName").getDefaultMessage()
+			model.addAttribute("result",result);
 			return "NewProduct";
 		} else {
 			return "Success";

@@ -1,16 +1,22 @@
 package com.bean;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class ProductBean {
 
 
-	@NotBlank
+	@NotBlank(message = "Please Enter Product Name")
 	private String productName;
+	@NotNull(message = "Please Enter Price")
+	@Min(value = 99,message = "Price should be 99+")
+	@Max(value = 100000,message = "Max allowed Price is 100000")
 	private Integer price;
 	private Integer qty;
 	
-	@NotBlank
+	@NotBlank(message = "Please Enter Category")
 	private String category;
 
 	public String getProductName() {

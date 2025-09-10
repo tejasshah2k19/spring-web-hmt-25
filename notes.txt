@@ -11,3 +11,6 @@ validation ->
 						
 				2) ProductBean=>	@NotBlank
 				
+				3) in controller we have to use @Validated and BindingResult 
+				
+				
