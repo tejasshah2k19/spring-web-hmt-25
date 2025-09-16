@@ -13,4 +13,67 @@ validation ->
 				
 				3) in controller we have to use @Validated and BindingResult 
 				
+----------------------------------------------------------------
+data base 
+		1) driver  mysql-driver 				
+		   spring-data-jdbc 	
+		   
+	     2)
+	     	configure application.properties 
+	     		url
+	     		username
+	     		password
+	    
+	    3)  JdbcTemplate -> object 
+				@Autowired
+				JdbcTemplate stmt; 
 				
+				
+				
+singleton design pattern -> 
+	
+@Autowire -> it will create instance -> spring -> 1 time 
+----------------------------------------------------------------
+JdbcTemplate -> query -> 
+	    
+	    insert : update() 
+	    update : update()
+	    delete : update()
+	    select : query()   -> n number of records.
+	    select : queryForObject()   -> single record : exactly one  
+
+----------------------------------------------------------------
+	    
+	    Course -> courses 
+	    				courseId
+	    				courseName
+	    				description 
+	    				price 
+	    				
+	    
+	   1) table : courses 
+	   2) CourseBean
+	   3) CourseController 
+	   				@Getmapping ->jsp -> form -> input 
+	   				@Postmapping -> read , validate , insert db 
+	   
+----------------------------------------------------------------
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    

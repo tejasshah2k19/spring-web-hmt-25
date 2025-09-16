@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 public class ProductBean {
 
@@ -17,6 +18,7 @@ public class ProductBean {
 	private Integer qty;
 	
 	@NotBlank(message = "Please Enter Category")
+	@Pattern(regexp = "[a-zA-Z]+",message = "Please Enter Valid Category")
 	private String category;
 
 	public String getProductName() {
