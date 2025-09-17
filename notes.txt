@@ -23,7 +23,7 @@ data base
 	     		url
 	     		username
 	     		password
-	    
+	 -----------------------------------------   
 	    3)  JdbcTemplate -> object 
 				@Autowired
 				JdbcTemplate stmt; 
@@ -58,6 +58,73 @@ JdbcTemplate -> query ->
 	   				@Postmapping -> read , validate , insert db 
 	   
 ----------------------------------------------------------------
+	    
+	CRUD 
+	    Laptop : table 
+	    	laptop 
+	    		laptopId
+	    		modelName
+	    		price 
+	    		ram 
+	    		ssd
+	    		 
+	    1) create table 
+	    	create table laptop
+	    	(
+	    		laptopId int primary key auto_increment,
+	    		modelName varchar(20),
+	    		price float,
+	    		ram varchar(20),
+	    		ssd varchar(20)
+	    	);
+	    
+	    
+	    2) bean -> LaptopBean
+	    
+	    3) controller -> 
+						@get -> jsp open input -> submit 
+						@post -> read validate db insert 
+						
+---------------------------
+
+
+JSTL ->java standard tag library 
+	try
+	forEach
+				1)	lib / dep / jar 
+					pom.xml 
+						<dependency>
+							<groupId>org.glassfish.web</groupId>
+							<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+						</dependency>
+
+						<dependency>
+							<groupId>jakarta.servlet.jsp.jstl</groupId>
+							<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+						</dependency>	
+								
+				2)
+	    			jsp tag -> import -> taglib 
+	    			 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	    			
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    
 	    
 	    
