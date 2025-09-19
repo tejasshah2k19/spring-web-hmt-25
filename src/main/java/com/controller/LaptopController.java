@@ -43,5 +43,17 @@ public class LaptopController {
 		model.addAttribute("laptops",laptops);
 		return "ListLaptop";
 	}
+	
+	@GetMapping("deletelaptop")
+	public String deleteLaptop(Integer laptopId) {
+		
+		String deleteQ = "delete from laptop where laptopId = ? ";
+		stmt.update(deleteQ,laptopId);
+	
+		
+		//
+		
+		return "redirect:/listlaptop";// url  
+	}
 
 }

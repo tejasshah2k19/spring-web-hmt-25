@@ -109,8 +109,23 @@ JSTL ->java standard tag library
 	    			
 	    
 	    
+---------------------------
 	    
-	    
+	InputDelete.jsp 
+		LaptopId : 17 
+			submit 
+			
+	controller -> 17 delete 
+---------------------------
+	TV -> insert , list , delete 
+	tvId 
+	modelName
+	price
+	qty
+	brand
+	inch 
+---------------------------
+				    
 	    
 	    
 	    

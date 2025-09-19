@@ -19,6 +19,7 @@
 			<th>Price</th>
 			<th>Ram</th>
 			<th>SSD</th>
+			<th>Action</th>
 		</tr>
 		<c:forEach items="${laptops}" var="l">
 
@@ -28,6 +29,7 @@
 				<td>${l.price}</td>
 				<td>${l.ram}</td>
 				<td>${l.ssd}</td>
+				<td><a href="deletelaptop?laptopId=${l.laptopId}">Delete</a>
 			</tr>
 
 		</c:forEach>
