@@ -124,13 +124,46 @@ JSTL ->java standard tag library
 	qty
 	brand
 	inch 
----------------------------
+-------------------------------------------------
+
+JdbcTemplate => 
 				    
+	update() => insert , update , delete 
+	query() => select 
+	queryForObject()  => select { single record -- exactly one  }  	    
+	    
+
+	select * from users ; 
+	userId firstaName email password 
+	1
+	2
+	3
+	4
+	5
+	
+	users -> table -> 1 record -> UserBean {userId,firstName,email,password}-> 5 	 
+								List<UserBean>
+								
+			BeanPropertyRowMapper -> 
+								
+								
+		BeanPropertyRowMapper map = new BeanPropertyRowMapper(UserBean.class);						
+	List<UserBean> list =  	stmt.query("select * from users",map);	
+		
+	List<UserBean> list =	stmt.query("select * from users",new BeanPropertyRowMapper(UserBean.class));						
+						
+List<UserBean> list = stmt.query("select * from users where firstName like ? ",new BeanPropertyRowMapper(UserBean.class),firstName);						
+								
+List<UserBean> list = stmt.query("select * from users where firstName like ? ",new BeanPropertyRowMapper(UserBean.class),new Object[]{ firstName  } );						
+								
+------------------------------------------------------------------------------------------------------
 	    
 	    
 	    
-	    
-	    
+	
+	
+	
+	
 	    
 	    
 	    

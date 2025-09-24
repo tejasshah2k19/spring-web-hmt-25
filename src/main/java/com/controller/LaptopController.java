@@ -39,21 +39,31 @@ public class LaptopController {
 	@GetMapping("listlaptop")
 	public String listLaptop(Model model) {
 		String selectQ = "select * from laptop";
-		List<LaptopBean> laptops = stmt.query(selectQ,new BeanPropertyRowMapper(LaptopBean.class));
-		model.addAttribute("laptops",laptops);
+		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper(LaptopBean.class));
+		model.addAttribute("laptops", laptops);
 		return "ListLaptop";
 	}
-	
+
 	@GetMapping("deletelaptop")
 	public String deleteLaptop(Integer laptopId) {
-		
+
 		String deleteQ = "delete from laptop where laptopId = ? ";
-		stmt.update(deleteQ,laptopId);
-	
-		
-		//
-		
-		return "redirect:/listlaptop";// url  
+		stmt.update(deleteQ, laptopId);
+		return "redirect:/listlaptop";// url
+	}
+
+	@GetMapping("searchlaptop")
+	public String searchLaptop() {
+		return "SearchLaptop";
+	}
+
+	@PostMapping("searchlaptop")
+	public String findLaptop(String modelName,Model model) {
+		String selectQ = "select * from laptop where modelName like ? ";
+		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper(LaptopBean.class),"%"+modelName+"%");
+
+		model.addAttribute("laptops", laptops);
+		return "ListLaptop";
 	}
 
 }
