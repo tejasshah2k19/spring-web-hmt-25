@@ -60,10 +60,20 @@ public class LaptopController {
 	@PostMapping("searchlaptop")
 	public String findLaptop(String modelName,Model model) {
 		String selectQ = "select * from laptop where modelName like ? ";
-		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper(LaptopBean.class),"%"+modelName+"%");
+		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper<>(LaptopBean.class),"%"+modelName+"%");
 
 		model.addAttribute("laptops", laptops);
 		return "ListLaptop";
 	}
+	
+	@GetMapping("viewlaptop")
+	public String viewLaptop(Integer laptopId,Model model) {
+		LaptopBean x = 	stmt.queryForObject("select * from laptop where laptopId = ?", new BeanPropertyRowMapper<>(LaptopBean.class),laptopId);
+		model.addAttribute("x",x);
+		return "ViewLaptop";
+	}
+	
+	
+	
 
 }
