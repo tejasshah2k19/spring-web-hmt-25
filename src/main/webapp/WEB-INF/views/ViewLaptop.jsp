@@ -9,6 +9,7 @@
 <body>
 <h1>View Laptop</h1>
 
-ModelName : ${x.modelName }<br>
+<b>ModelName : </b> ${x.modelName }<br>
+
 </body>
 </html>

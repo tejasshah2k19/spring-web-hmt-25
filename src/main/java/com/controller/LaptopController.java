@@ -58,22 +58,40 @@ public class LaptopController {
 	}
 
 	@PostMapping("searchlaptop")
-	public String findLaptop(String modelName,Model model) {
+	public String findLaptop(String modelName, Model model) {
 		String selectQ = "select * from laptop where modelName like ? ";
-		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper<>(LaptopBean.class),"%"+modelName+"%");
+		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper<>(LaptopBean.class),
+				"%" + modelName + "%");
 
 		model.addAttribute("laptops", laptops);
 		return "ListLaptop";
 	}
-	
+
 	@GetMapping("viewlaptop")
-	public String viewLaptop(Integer laptopId,Model model) {
-		LaptopBean x = 	stmt.queryForObject("select * from laptop where laptopId = ?", new BeanPropertyRowMapper<>(LaptopBean.class),laptopId);
-		model.addAttribute("x",x);
+	public String viewLaptop(Integer laptopId, Model model) {
+		LaptopBean x = stmt.queryForObject("select * from laptop where laptopId = ?",
+				new BeanPropertyRowMapper<>(LaptopBean.class), laptopId);
+		model.addAttribute("x", x);
 		return "ViewLaptop";
 	}
-	
-	
-	
+
+	@GetMapping("editlaptop")
+	public String editLaptop(Integer laptopId, Model model) {
+		LaptopBean x = stmt.queryForObject("select * from laptop where laptopId = ?",
+				new BeanPropertyRowMapper<>(LaptopBean.class), laptopId);
+		model.addAttribute("x", x);
+		return "EditLaptop";
+	}
+
+	@PostMapping("updatelaptop")
+	public String updateLaptop(LaptopBean laptopBean) {
+		// validation
+		// insert
+		stmt.update("update laptop set modelName = ? , price = ? , ram = ? , ssd = ? where laptopId = ? ",
+				laptopBean.getModelName(), laptopBean.getPrice(), laptopBean.getRam(), laptopBean.getSsd(),
+				laptopBean.getLaptopId());
+
+		return "redirect:/listlaptop";
+	}
 
 }

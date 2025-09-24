@@ -30,7 +30,8 @@
 				<td>${l.ram}</td>
 				<td>${l.ssd}</td>
 				<td><a href="deletelaptop?laptopId=${l.laptopId}">Delete</a> |
-					<a href="viewlaptop?laptopId=${l.laptopId}">View</a>
+					<a href="viewlaptop?laptopId=${l.laptopId}">View</a> | 
+					<a href="editlaptop?laptopId=${l.laptopId}">Edit</a>
 			</tr>
 
 		</c:forEach>
