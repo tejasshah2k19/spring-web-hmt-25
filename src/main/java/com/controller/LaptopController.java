@@ -11,14 +11,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.bean.LaptopBean;
+import com.dao.LaptopDao;
 
 @Controller
 public class LaptopController {
+
 
 	// singleton design pattern
 	@Autowired
 	JdbcTemplate stmt;
 
+	@Autowired
+	LaptopDao laptopDao; 
+	
+	
 	@GetMapping("newlaptop")
 	public String newLaptop() {
 
@@ -29,10 +35,7 @@ public class LaptopController {
 	public String saveLaptop(LaptopBean laptopBean) {
 		// validation
 		// insert
-		String insertQ = "insert into laptop (modelName,ram,ssd,price) values (?,?,?,?)";
-		stmt.update(insertQ, laptopBean.getModelName(), laptopBean.getRam(), laptopBean.getSsd(),
-				laptopBean.getPrice());
-
+		laptopDao.addLaptop(laptopBean); 
 		return "Home";
 	}
 
