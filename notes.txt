@@ -158,12 +158,83 @@ List<UserBean> list = stmt.query("select * from users where firstName like ? ",n
 								
 ------------------------------------------------------------------------------------------------------
 	    
+FoodItem
+	pk : id 
+	name 
+	price
+	qty 
+	
+	
+	create table food_item (
+		foodItemId int primary key auto_increment,
+		name varchar(20),
+		price int,
+		qty int
+		);
+		
+		
+FoodItemBean   
+	   
+--------------------------------------------------------------------------
+
+password -> encrypt -> db store -> 
+
+kungfu --> db 
+
+
+kungfu ->  ngret5y4jendfbvhydeg4g5htjrfnbv ->	    
+	    
+Bcrypt -> algo ->
+
+spring crypto -> maven web site -> 	
+	
+
+1) add spring crypto lib from maven to pom.xml 
+2)  create object of Bcrypt Password Encoder 
+3)  use encode() to encrypt the password 
+
+2) Application.java -> method -> return type PasswordEncoder @Bean 
+----------------------------------------------------------------------------
+signup ->
+		firstname
+		lastname 
+		email	 	   
+		password 
+					[submit] 
+					
+	 
+server -> request -> read , validation, {password : encode } -> db store -> login
+	password -> plain text 
+	
+	db -> password -> encrypted ----> 
+	
+	bcrypt -> 
+	
+	
+1) pom.xml -> spring crypto  {mvnrepository}
+2) Application -> create method with return type 
+			PasswordEncoder - return bcrypt 
+			@Bean 
+			 
+3) use encode() 
+
+-------------------------------------------------------------------------------
 	    
 	    
-	
-	
-	
-	
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    
 	    
 	    

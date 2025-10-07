@@ -41,17 +41,14 @@ public class LaptopController {
 
 	@GetMapping("listlaptop")
 	public String listLaptop(Model model) {
-		String selectQ = "select * from laptop";
-		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper(LaptopBean.class));
+		List<LaptopBean> laptops  =  laptopDao.getAllLaptop(); 
 		model.addAttribute("laptops", laptops);
 		return "ListLaptop";
 	}
 
 	@GetMapping("deletelaptop")
 	public String deleteLaptop(Integer laptopId) {
-
-		String deleteQ = "delete from laptop where laptopId = ? ";
-		stmt.update(deleteQ, laptopId);
+		laptopDao.removeLaptop(laptopId);
 		return "redirect:/listlaptop";// url
 	}
 

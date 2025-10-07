@@ -1,6 +1,9 @@
 package com.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -21,12 +24,15 @@ public class LaptopDao {
 	}
 
 	// get all laptop : select
-	public void getAllLaptop() {
-
+	public List<LaptopBean> getAllLaptop() {
+		String selectQ = "select * from laptop";
+		List<LaptopBean> laptops = stmt.query(selectQ, new BeanPropertyRowMapper(LaptopBean.class));
+		return laptops; 
 	}
 
 	// remove laptop : delete
-	public void removeLaptop() {
-
+	public void removeLaptop(Integer laptopId) {
+		String deleteQ = "delete from laptop where laptopId = ? ";
+		stmt.update(deleteQ, laptopId);
 	}
 }
