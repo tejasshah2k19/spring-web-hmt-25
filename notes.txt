@@ -219,10 +219,36 @@ server -> request -> read , validation, {password : encode } -> db store -> logi
 3) use encode() 
 
 -------------------------------------------------------------------------------
+	   file uploading 
+	   		image 
+	   		video
+	   		audio 
+	   		any kind of file 
+	   		
+	   		
+	   1) form -> input type="file" name="profilePic" 
+	   
+	   2) form method => post [mandatory]
+	      form enctype => multipart/form-data 	
 	    
-	    
-	    
-	    
+	   3) file read
+	   		MultipartFile : Bean 
+	   		
+	   4) upload file to cloud 
+	   		cloudinary ->
+	   		
+	   				0) signup and login to the cloudinary and get 
+	   						cloudName , folderName, key and secret 
+	   						 	
+	   				1) pom.xml dep -> cloudinary-http44
+	   				
+	   				2) @Bean -> and create cloudinary object 
+	   				
+	   				3) @Autowired 
+	   					Cloudinary cloudinary
+	   					
+	   				4) method -> use  		
+	   		    
 	    
 	    
 	    
