@@ -258,8 +258,21 @@ server -> request -> read , validation, {password : encode } -> db store -> logi
 	name	pic 
 		    
 -------------------------------------------------------------------------------
-	    
-	    
+SMTP server 
+
+	gmail 
+	yahoo 
+	mailgun 
+			    
+-------------------------------------------------------------------------------
+spring + mail + gmail  
+
+	1) 	    add dep 
+				java mail 
+				
+	2) 		gmail configure
+			application.properties 
+			
 	    
 	    
 	    
